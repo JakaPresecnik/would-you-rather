@@ -1,0 +1,3 @@
+WHEN DONE!
+
+1. inside reducers/authedUser remove data in the store

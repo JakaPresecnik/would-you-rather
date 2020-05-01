@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setUser } from '../actions/authedUser'
+import { setUserId } from '../actions/authedUser'
 
 class Login extends Component {
   state = {
@@ -9,11 +9,12 @@ class Login extends Component {
 
   handleLogIn = (e, authedUser) => {
     e.preventDefault()
-    this.props.dispatch(setUser(authedUser))
+    this.props.dispatch(setUserId(this.props.users[authedUser]))
   }
 
   render() {
-    const { users } = this.props
+    const { usersArray } = this.props
+    console.log(this.props)
 
     return (
       <div>
@@ -23,7 +24,7 @@ class Login extends Component {
         <form onSubmit={e => this.handleLogIn(e, this.state.authedUser)}>
           <input list="users" placeholder='Select User' onChange={e => this.setState({authedUser: e.target.value})}/>
           <datalist id="users">
-            {users.map((user) => (
+            {usersArray.map((user) => (
               <option key={user.id} value={user.id}>{user.name}</option>
             ))}
           </datalist>
@@ -43,7 +44,8 @@ const mapStateToProps = ({users}) => {
   }})
 
   return {
-    users: usersNames
+    usersArray: usersNames,
+    users
   }
 }
 

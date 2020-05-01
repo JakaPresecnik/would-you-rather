@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { handleGetQuestions, handleGetUsers } from '../actions'
+import Nav from './Nav'
 import Home from './Home'
 import Leaderboard from './Leaderboard'
 import NewQuestion from './NewQuestion'
@@ -17,9 +18,12 @@ class App extends Component {
     console.log(this.props)
     return (
       <div className="App">
-        {this.props.authedUser === ''
+        {this.props.authedUser === null
         ? <Login /> :
-        <Home />
+        <div>
+          <Nav />
+          <Home />
+        </div>
       }
       </div>
     )
