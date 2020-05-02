@@ -6,7 +6,7 @@ import Home from './Home'
 import Leaderboard from './Leaderboard'
 import NewQuestion from './NewQuestion'
 import Login from './Login'
-import '../styles/App.css';
+import '../styles/App.scss';
 
 class App extends Component {
 
