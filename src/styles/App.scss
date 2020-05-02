@@ -1,20 +1,25 @@
 @import './nav.scss';
 @import './home.scss';
-
+body {
+  background-color: #eee;
+}
 .App {
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
+  margin: 1em;
+  border-radius: 30vh;
   pointer-events: none;
+  -webkit-animation:spin 10s linear infinite;
+  -moz-animation:spin 10s linear infinite;
+  animation:spin 10s linear infinite;
 }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -31,16 +36,19 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.login {
+  border: 2px double #ccc;
+  margin-top: 2em;
+  background-color: #fff;
+  border-radius: 3em;
+  box-shadow: 3px 3px 15px #ccc, -3px -3px 15px #ccc;
+  input {
+    margin: 1em auto;
+    display: block;
+    width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  button {
+    margin: 1em;
+    width: 50%;
   }
-}
-
-input {
-  margin: auto;
-  display: block;
 }

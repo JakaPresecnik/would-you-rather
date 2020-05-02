@@ -14,21 +14,22 @@ class Home extends Component {
   }
 
   render(){
-    console.log(this.state)
+    const { answered } = this.state
+    const { questionsIds, answers } = this.props
     return (
       <section>
         <div className='questions'>
-          <h3 className={`active-${this.state.answered}`} onClick={e => this.toggleQuestions(true)}>Answered questions</h3>
-          <h3 className={`active-${!this.state.answered}`} onClick={e => this.toggleQuestions(false)}>Unanswered questions</h3>
+          <h3 className={`active-${answered}`} onClick={e => this.toggleQuestions(true)}>Answered questions</h3>
+          <h3 className={`active-${!answered}`} onClick={e => this.toggleQuestions(false)}>Unanswered questions</h3>
         </div>
         <div className='question-list'>
-          {this.state.answered ? (
-            this.props.questionsIds.map((qid) => {
-            return this.props.answers.includes(qid) &&
+          {answered ? (
+            questionsIds.map((qid) => {
+            return answers.includes(qid) &&
             <Question key={qid} id={qid}/>
           })) : (
-            this.props.questionsIds.map((qid) => {
-            return !this.props.answers.includes(qid) &&
+            questionsIds.map((qid) => {
+            return !answers.includes(qid) &&
             <Question key={qid} id={qid}/>
           }))}
         </div>

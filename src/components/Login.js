@@ -17,12 +17,12 @@ class Login extends Component {
     console.log(this.props)
 
     return (
-      <div>
-        <p>Welcome to Would you rather app!</p>
+      <section class='login'>
+        <h2>Welcome to Would you rather app!</h2>
         <p>Please log in to continue</p>
         <img className='App-logo' src='https://equimper.gallerycdn.vsassets.io/extensions/equimper/react-native-react-redux/2.0.3/1551449028703/Microsoft.VisualStudio.Services.Icons.Default' alt='react and redux logo combined' />
         <form onSubmit={e => this.handleLogIn(e, this.state.authedUser)}>
-          <input list="users" placeholder='Select User' onChange={e => this.setState({authedUser: e.target.value})}/>
+          <input id='select-user' list="users" placeholder='Select User' onChange={e => this.setState({authedUser: e.target.value})}/>
           <datalist id="users">
             {usersArray.map((user) => (
               <option key={user.id} value={user.id}>{user.name}</option>
@@ -30,7 +30,7 @@ class Login extends Component {
           </datalist>
           <button disabled={this.state.authedUser === ''}>SUBMIT</button>
         </form>
-      </div>
+      </section>
     )
   }
 }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { formatQuestion } from '../data/_DATA'
 
 class NewQuestion extends Component {
   state = {
@@ -13,10 +15,12 @@ class NewQuestion extends Component {
   }
 
   handleSubmit = (e) => {
-    
+
   }
 
   render() {
+    console.log(this.state)
+    console.log(this.props)
     return (
       <div>
         <h3>Create a New Question</h3>
@@ -34,4 +38,10 @@ class NewQuestion extends Component {
   }
 }
 
-export default NewQuestion
+const mapStateToProps = ({authedUser}) => {
+  return {
+    author: authedUser.id
+  }
+}
+
+export default connect(mapStateToProps)(NewQuestion)
