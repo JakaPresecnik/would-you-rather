@@ -1,4 +1,5 @@
 @import './nav.scss';
+@import './home.scss';
 
 .App {
   text-align: center;
@@ -39,16 +40,7 @@
   }
 }
 
-.avatar {
-  float: left;
-  width: 70px;
-  border-radius: 100px;
-}
 input {
   margin: auto;
   display: block;
-}
-
-.intro-icon {
-  width: 200px;
 }

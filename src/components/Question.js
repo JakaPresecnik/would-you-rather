@@ -6,16 +6,14 @@ class Question extends Component {
     const { authorName, authorAvatar, question } = this.props
 
     return(
-      <div>
-        <p>{authorName} asks:</p>
-        <div className='inline-div'>
+      <div className='question'>
+        <p className='question-header'>{authorName} asks:</p>
           <img className='avatar' src={authorAvatar} alt={`Avatar of ${authorName}`}/>
-          <div>
+          <div className='inline-div'>
             <p>Would you rather...</p>
             <p>...{question.optionOne.text.slice(0, question.optionOne.text.length - 20)}...</p>
             <button>VIEW POLL</button>
           </div>
-        </div>
       </div>
     )
   }

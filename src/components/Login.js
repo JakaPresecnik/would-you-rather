@@ -20,7 +20,7 @@ class Login extends Component {
       <div>
         <p>Welcome to Would you rather app!</p>
         <p>Please log in to continue</p>
-        <img className='intro-icon' src='https://equimper.gallerycdn.vsassets.io/extensions/equimper/react-native-react-redux/2.0.3/1551449028703/Microsoft.VisualStudio.Services.Icons.Default' alt='react and redux logo combined' />
+        <img className='App-logo' src='https://equimper.gallerycdn.vsassets.io/extensions/equimper/react-native-react-redux/2.0.3/1551449028703/Microsoft.VisualStudio.Services.Icons.Default' alt='react and redux logo combined' />
         <form onSubmit={e => this.handleLogIn(e, this.state.authedUser)}>
           <input list="users" placeholder='Select User' onChange={e => this.setState({authedUser: e.target.value})}/>
           <datalist id="users">
