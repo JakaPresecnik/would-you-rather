@@ -1,4 +1,4 @@
-import { SET_USER_ID } from '../actions/authedUser'
+import { SET_USER_ID, SAVE_ANSWER } from '../actions/authedUser'
 
 export default function authedUser(state = {
   id: 'johndoe',
@@ -14,7 +14,14 @@ export default function authedUser(state = {
   switch(action.type) {
     case SET_USER_ID:
       return action.authedUser
-
+    case SAVE_ANSWER:
+      return {
+        ...state,
+          answers: {
+            ...state.answers,
+              [action.qid]: action.answer,
+          }
+      }
     default:
       return state
   }

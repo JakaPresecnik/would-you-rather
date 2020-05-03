@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { BrowserRouter, Route } from 'react-router-dom'
+
 import { handleGetQuestions, handleGetUsers } from '../actions'
 import Nav from './Nav'
 import Home from './Home'
 import Leaderboard from './Leaderboard'
 import NewQuestion from './NewQuestion'
+import Poll from './Poll'
 import Login from './Login'
 import '../styles/App.scss';
 
@@ -16,15 +19,18 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        {this.props.authedUser === null
-        ? <Login /> :
-        <div>
-          <Nav />
-          <Home />
+      <BrowserRouter>
+        <div className="App">
+          {this.props.authedUser === null
+          ? <Login /> :
+          <div>
+            <Nav />
+            <Route path='/' exact component={Home} />
+            <Route path='/poll/:id' component={Poll} />
+          </div>
+        }
         </div>
-      }
-      </div>
+      </BrowserRouter>
     )
   }
 }

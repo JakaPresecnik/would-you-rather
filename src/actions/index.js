@@ -1,7 +1,7 @@
-import { _getQuestions } from '../data/_DATA'
-import { _getUsers } from '../data/_DATA'
-import { getQuestions } from './questions'
-import { getUsers } from './users'
+import { _getQuestions, _getUsers, _saveQuestionAnswer } from '../data/_DATA'
+import { getQuestions, saveQuestionAnswer } from './questions'
+import { getUsers, saveUserAnswer } from './users'
+import { saveAnswer } from './authedUser'
 
 export function handleGetQuestions (questions) {
   return (dispatch) => {
@@ -18,5 +18,13 @@ export function handleGetUsers(users) {
     .then((users) => {
       dispatch(getUsers(users))
     })
+  }
+}
+
+export function handleSaveAnswer(answer) {
+  return (dispatch) => {
+    dispatch(saveQuestionAnswer(answer))
+    dispatch(saveUserAnswer(answer))
+    dispatch(saveAnswer(answer))
   }
 }

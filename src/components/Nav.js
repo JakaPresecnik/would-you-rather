@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { setUserId } from '../actions/authedUser'
 
 class Nav extends Component {
@@ -13,7 +14,7 @@ class Nav extends Component {
     return(
       <nav>
         <ul>
-          <li>Home</li>
+          <Link to='/'><li>Home</li></Link>
           <li>NewQuestion</li>
           <li>Leaderboard</li>
         </ul>

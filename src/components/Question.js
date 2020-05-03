@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class Question extends Component {
   render() {
@@ -8,12 +9,19 @@ class Question extends Component {
     return(
       <div className='question'>
         <p className='question-header'>{authorName} asks:</p>
-          <img className='avatar' src={authorAvatar} alt={`Avatar of ${authorName}`}/>
-          <div className='inline-div'>
-            <p>Would you rather...</p>
-            <p>...{question.optionOne.text.slice(0, question.optionOne.text.length - 20)}...</p>
+        <img className='avatar' src={authorAvatar} alt={`Avatar of ${authorName}`}/>
+        <div className='inline-div'>
+          <p>Would you rather...</p>
+          <p>...{question.optionOne.text.slice(0, question.optionOne.text.length - 20)}...</p>
+          <Link
+            to={{
+              pathname:`/poll/${question.id}`,
+              state: { question, authorName, authorAvatar }
+            }}
+          >
             <button>VIEW POLL</button>
-          </div>
+          </Link>
+        </div>
       </div>
     )
   }

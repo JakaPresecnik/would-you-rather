@@ -14,10 +14,9 @@ class Login extends Component {
 
   render() {
     const { usersArray } = this.props
-    console.log(this.props)
 
     return (
-      <section class='login'>
+      <section className='login'>
         <h2>Welcome to Would you rather app!</h2>
         <p>Please log in to continue</p>
         <img className='App-logo' src='https://equimper.gallerycdn.vsassets.io/extensions/equimper/react-native-react-redux/2.0.3/1551449028703/Microsoft.VisualStudio.Services.Icons.Default' alt='react and redux logo combined' />
