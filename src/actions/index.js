@@ -23,8 +23,6 @@ export function handleGetUsers(users) {
 
 export function handleSaveAnswer(answer) {
   return (dispatch) => {
-    dispatch(saveQuestionAnswer(answer))
-    dispatch(saveUserAnswer(answer))
-    dispatch(saveAnswer(answer))
+    dispatch(saveQuestionAnswer(answer), saveUserAnswer(answer), saveAnswer(answer))
   }
 }
