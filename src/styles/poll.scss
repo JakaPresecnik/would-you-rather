@@ -1,0 +1,26 @@
+.inline-div {
+
+  .unanswered, .answered {
+    margin: 0.8em;
+    padding: 0.2em;
+    border: 1px solid #bbb;
+  }
+
+  .answered {
+    background-color: #ccc;
+    position: relative;
+    .badge {
+      position: absolute;
+      z-index: 1;
+      bottom: -1.2em;
+      float: right;
+      right: -0.8em;
+      display: inline-block;
+      width: 4.5em;
+      border-radius: 50%;
+      text-align: center;
+      background: #999;
+      color: #fefefe;
+    }
+  }
+}
