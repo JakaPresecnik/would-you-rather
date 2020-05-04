@@ -23,6 +23,10 @@ class PollResults extends Component {
   }
 }
 
+const mapStateToProps = ({questions}, { id }) => {
+  return {
+    question: questions[id],
+  }
+}
 
-
-export default PollResults
+export default connect(mapStateToProps)(PollResults)

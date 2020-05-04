@@ -25,7 +25,6 @@ class Poll extends Component {
   render() {
     const { question, authorName, authorAvatar } = this.props.location.state
     const { authedUser } = this.props
-    console.log(this.props.location.state.question)
 
     return(
       <section>
@@ -47,7 +46,7 @@ class Poll extends Component {
                 </form>
               </div>
             ) : (
-              <PollResults key={question.id} question={question} />
+              <PollResults key={question.id} id={question.id} />
             )
           }
 
