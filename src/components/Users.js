@@ -9,7 +9,7 @@ class Users extends Component {
 
     console.log(user)
     return (
-      <div>
+      <div className='question'>
         <img className='avatar' src={user.avatarURL} alt={`Avatar of ${user.name}`}/>
         <div>
           <p>{user.name}</p>

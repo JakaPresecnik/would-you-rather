@@ -44,13 +44,13 @@ body {
   background-color: #fff;
   border-radius: 3em;
   box-shadow: 3px 3px 15px #ccc, -3px -3px 15px #ccc;
-  input {
-    margin: 1em auto;
-    display: block;
-    width: 50%;
-  }
   button {
     margin: 1em;
     width: 50%;
   }
+}
+input {
+  margin: 1em auto;
+  display: block;
+  width: 50%;
 }

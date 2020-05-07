@@ -49,11 +49,15 @@ section {
     width: 25%;
     border-radius: 50%;
   }
+}
+.new-question {
+  margin-top: 1em;
   .inline-div {
-    border-left: 1px solid #ccc;
-    width: 60%;
+    border: 1px solid #ccc;
+    padding-bottom: 1em;
     button {
-      width: 80%;
+      margin: 1em;
+      width: 50%;
     }
   }
 }

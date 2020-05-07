@@ -16,7 +16,7 @@ class Nav extends Component {
         <ul>
           <Link to='/'><li>Home</li></Link>
           <Link to='/new'><li>NewQuestion</li></Link>
-          <li>Leaderboard</li>
+          <Link to='/leaderboard'><li>Leaderboard</li></Link>
         </ul>
         <div className='dropdown' onClick={this.handleLogOut}>
           <img className='dropdown-pic' src={authedUserAvatar} alt= {`Avatar of ${authedUserName}`} / >
