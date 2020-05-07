@@ -25,6 +25,7 @@ class App extends Component {
           ? <Login /> :
           <div>
             <Nav />
+            <Route path='/new' component={NewQuestion} />
             <Route path='/' exact component={Home} />
             <Route path='/poll/:id' component={Poll} />
           </div>
