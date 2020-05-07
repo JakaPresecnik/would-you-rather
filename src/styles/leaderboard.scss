@@ -1,0 +1,23 @@
+.grid-div {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: space-around;
+  img {
+    margin: auto;
+    width: 7em;
+    border-radius: 50%;
+  }
+  .score  {
+    z-index: 1;
+    display: inline-block;
+    height: 4em;
+    width: 4em;
+    border-radius: 50%;
+    text-align: center;
+    background: #999;
+    color: #fefefe;
+    p {
+      line-height: 2em;
+    }
+  }
+}

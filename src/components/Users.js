@@ -9,16 +9,16 @@ class Users extends Component {
 
     console.log(user)
     return (
-      <div className='question'>
+      <div className='grid-div'>
         <img className='avatar' src={user.avatarURL} alt={`Avatar of ${user.name}`}/>
         <div>
-          <p>{user.name}</p>
+          <h3>{user.name}</h3>
           <p>Answered Questions: <span>{numAnswered}</span></p>
           <p>Created Questions: <span>{createdQuestions}</span></p>
         </div>
         <div>
           <p>Score:</p>
-          <p>{numAnswered + createdQuestions}</p>
+          <div className='score'><p>{numAnswered + createdQuestions}</p></div>
         </div>
 
       </div>

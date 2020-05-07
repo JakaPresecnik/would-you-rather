@@ -6,11 +6,11 @@ class Leaderboard extends Component {
   render() {
     const { usersIds } = this.props
     return (
-      <div>
+      <section>
         {usersIds.map((id) => (
           <Users key={id} id={id}/>
         ))}
-      </div>
+      </section>
     )
   }
 }
