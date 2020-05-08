@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 $xlight-green: #d3facf;
 $light-green: #25ad17;
@@ -10,11 +11,12 @@ $light-purple: #ddb5ed;
 $purple: #a657c5;
 $dark-purple: #340247;
 
-$light-orange: #e3a748;
+$light-orange: #ffd48f;
 $orange: #af6f0b;
 $dark-orange: #6b4200;
 
 $nav-font: 'Barlow', sans-serif;
+$would-you-rather: 'Luckiest Guy', cursive;
 
 nav {
   margin-bottom: 1em;
@@ -97,6 +99,78 @@ nav {
       width: 2em;
       height: 2em;
       border-radius: 1.5em;
+    }
+  }
+}
+
+.login {
+  border: 1em solid transparent;
+  border-image: linear-gradient(to right top, $purple, #fff, #5abbff);
+  border-image-slice: 1;
+  max-width: 500px;
+  margin: 5em auto;
+  padding: 0.5em;
+  background-color: #fff;
+  box-shadow: 2px 2px 15px #555, -2px -2px 15px #555;
+
+  h2 {
+    font-family: $would-you-rather;
+    font-size: 2.2em;
+    color: $dark-purple;
+    background: linear-gradient(to right top, #136, #5abbff, $purple, $dark-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p {
+    color: $dark-purple;
+    font-family: $nav-font;
+    font-size: 1.2em;
+  }
+
+  img {
+    height: 40vmin;
+    margin: 0.2em;
+    border-radius: 30vh;
+    pointer-events: none;
+    -webkit-animation:spin 10s linear infinite;
+    -moz-animation:spin 10s linear infinite;
+    animation:spin 12s linear infinite;
+  }
+
+  select {
+    height: 2em;
+    font-size: 1em;
+    font-family: $nav-font;
+    margin: 1em auto;
+    border: 1px solid $light-purple;
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  button {
+    background-color: $light-purple;
+    border: 1px solid $purple;
+    border-radius: 5px;
+    font-size: 1em;
+    color: $dark-purple;
+    padding: 0.3em;
+    margin-bottom: 1em;
+    width: 50%;
+    margin-bottom: 2em;
+    box-shadow: 1px 1px 3px $purple;
+    cursor: pointer;
+    &:hover {
+      background-color: $purple;
+    }
+    &:disabled {
+      background-color: $light-purple !important;
+      color: $purple;
+      cursor: not-allowed;
     }
   }
 }

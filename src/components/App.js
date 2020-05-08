@@ -22,7 +22,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           {this.props.authedUser === null
-          ? <Login /> :
+          ? <Login path='/login' /> :
           <div>
             <Nav />
             <Route path='/new' component={NewQuestion} />
