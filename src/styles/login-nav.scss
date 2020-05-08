@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400&display=swap');
+
+$xlight-green: #d3facf;
+$light-green: #25ad17;
+$green: #168f09;
+$dark-green: #0b7600;
+$xdark-green: #085800;
+
+$light-purple: #ddb5ed;
+$purple: #a657c5;
+$dark-purple: #340247;
+
+$light-orange: #e3a748;
+$orange: #af6f0b;
+$dark-orange: #6b4200;
+
+$nav-font: 'Barlow', sans-serif;
+
+nav {
+  margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: $xlight-green;
+  border-bottom: 2px solid $green;
+  font-family: $nav-font;
+  font-size: 1.1em;
+  button {
+    background-color: inherit;
+    color: $purple;
+    border: none;
+    padding: 0.5em 0.8em;
+    margin-left: 1em;
+    cursor: pointer;
+    font-size: 0.85em;
+    &:hover {
+      background-color: $dark-purple;
+      border-radius: 70% 0;
+
+    }
+  }
+  ul {
+    list-style-type: none;
+    a {
+      color: $xdark-green;
+      text-decoration: none;
+      padding: 1em 0.6em;
+      border-radius: 70% 0;
+      &:hover {
+        background-color: $green;
+        color: $xlight-green
+      }
+      &:active {
+        background-color: $purple;
+        color: $light-purple;
+      }
+    }
+    li {
+      display: inline;
+      padding: 1 0.1em;
+    }
+  }
+  .dropdown {
+    margin: auto 0.2em;
+    width: 4em;
+    cursor: pointer;
+
+    img {
+      width: 2em;
+      height: 2em;
+      border-radius: 1.5em;
+      margin: auto;
+    }
+
+    .dropdown-content {
+      background-color: $dark-purple;
+      display: none;
+      height: auto;
+      padding: 0.5em 0;
+      position: absolute;
+      right: -0;
+      top: 3.3em;
+    }
+    &:hover .dropdown-content {
+      display: block;
+    }
+  }
+
+  .userboard {
+    p {
+      padding: 0 0.5em;
+    }
+
+    img {
+      margin: auto;
+      padding: 0;
+      width: 2em;
+      height: 2em;
+      border-radius: 1.5em;
+    }
+  }
+}
+
+@media only screen and (min-width: 630px){
+  .dropdown {
+    display: none;
+  }
+  .userboard {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 629px){
+  .userboard {
+    display: none;
+  }
+}

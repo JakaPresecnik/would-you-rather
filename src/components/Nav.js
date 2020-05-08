@@ -15,7 +15,7 @@ class Nav extends Component {
       <nav>
         <ul>
           <Link to='/'><li>Home</li></Link>
-          <Link to='/new'><li>NewQuestion</li></Link>
+          <Link to='/new'><li>New Question</li></Link>
           <Link to='/leaderboard'><li>Leaderboard</li></Link>
         </ul>
         <div className='dropdown' onClick={this.handleLogOut}>
