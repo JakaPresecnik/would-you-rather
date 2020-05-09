@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Balsamiq+Sans:700|Open+Sans:400,600&display=swap');
+
 $xlight-green: #d3facf;
 $light-green: #25ad17;
 $green: #168f09;
@@ -8,55 +10,109 @@ $light-purple: #ddb5ed;
 $purple: #a657c5;
 $dark-purple: #340247;
 
-$light-orange: #e3a748;
+$light-orange: #ffe5ba;
 $orange: #af6f0b;
 $dark-orange: #6b4200;
 
+$header-font: 'Balsamiq Sans', cursive;
+$normal-font: 'Open Sans', sans-serif;
+
+.container {
+  background-image: linear-gradient(to right top, $xlight-green, #fff, $light-orange);
+  min-height: 100vh;
+}
 section {
   max-width: 700px;
-  margin: auto;
+  margin: 2em auto;
 }
 .questions {
   display: flex;
   justify-content: space-around;
   h3 {
-    background-color: #eee;
+    background-color: $xlight-green;
     font-size: 1.1em;
-    border: 1px solid #ccc;
+    font-family: $header-font;
+    line-height: 2.2em;
+    color: $green;
+    border-top: 1px solid $light-green;
+    border-right: 1px solid $light-green;
+    border-left: 1px solid $light-green;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     width: 100%;
-    padding: 0.5em 0;
     margin: 0;
     display: inline;
     &:hover {
-      background-color: #bbb;
+      border-top: 1px solid $light-green;
+      border-right: 1px solid $light-green;
+      border-left: 1px solid $light-green;
+      background-color: $light-green;
+      color: $xlight-green;
       cursor: pointer;
     }
   }
   .active-true {
-    background-color: #bbb;
+    border-top: 1px solid $orange;
+    border-right: 1px solid $orange;
+    border-left: 1px solid $orange;
+    background-color: $orange;
+    color: $light-orange;
+    font-style: italic;
   }
 }
 .question-list {
-  border: 1px solid #ccc;
+  border: 2px solid $orange;
+  margin-top: 0;
+  background: $light-orange;
+  padding: 1.5em;
 }
+
 .question {
+  background-color: #eee;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 1em;
   padding-bottom: 0.5em;
-  border: 1px solid #ccc;
+  margin-bottom: 1.5em;
+  border: 1px solid $orange;
+  box-shadow: 1px 1px 7px $dark-orange;
+  border-radius: 1em;
   .question-header {
+    font-family: $normal-font;
+    font-weight: bold;
+    color: $light-orange;
     width: 100%;
-    background-color: #bbb;
+    background-color: $orange;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
     margin-top: 0;
     padding: 0.3em;
   }
-  form {
-    line-height: 2em;
-    margin-bottom: 1.5em;
+  .inline-div {
+    color: $dark-orange;
+    width: 60%;
+    border-left: 1px solid $orange;
+    margin: 0.8em;
+    button {
+      width: 70%;
+      margin-top: 1.5em;
+      font-size: 0.85em;
+      font-family: $normal-font;
+      color: $xdark-green;
+      cursor: pointer;
+      padding: 0.1em;
+      background-color: $xlight-green;
+      border: 1px solid $green;
+      box-shadow: 1px 1px 3px $dark-green;
+      &:hover {
+        background-color: $green;
+        color:$xlight-green;
+      }
+      &:active {
+        background-color: $dark-green;
+        box-shadow: none;
+      }
+    }
   }
   img {
     margin: auto;
@@ -64,6 +120,8 @@ section {
     border-radius: 50%;
   }
 }
+
+
 .new-question {
   margin-top: 1em;
   .inline-div {

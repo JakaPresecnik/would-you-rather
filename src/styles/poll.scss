@@ -1,13 +1,66 @@
-.inline-div {
+@import url('https://fonts.googleapis.com/css?family=Balsamiq+Sans:700|Open+Sans:400,600&display=swap');
 
+$or: 'Balsamiq Sans', cursive;
+
+$xlight-green: #d3facf;
+$light-green: #25ad17;
+$green: #168f09;
+$xdark-green: #085800;
+
+$dark-purple: #340247;
+$light-purple: #ddb5ed;
+
+$light-orange: #ffe5ba;
+$orange: #af6f0b;
+
+
+.inline-div {
+  .bigger-text {
+    margin-top: 0.3em;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  form {
+    line-height: 2.3em;
+    margin-bottom: 1.5em;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"] + label span {
+        display:inline-block;
+        width:16px;
+        height:16px;
+        margin: -2px 10px 0 0;
+        vertical-align:middle;
+        background:$xlight-green;
+        border: 1px solid $green;
+        border-radius: 50%;
+        cursor:pointer;
+    }
+
+    input[type="radio"]:checked + label span {
+      width: 8px;
+      height: 8px;
+      border: 5px solid $light-green;
+      background: $xdark-green -57px top no-repeat;
+    }
+
+    p {
+      line-height: 0;
+      font-family: $or;
+    }
+  }
   .unanswered, .answered {
     margin: 0.8em;
     padding: 0.2em;
-    border: 1px solid #bbb;
+    border: 1px solid $orange;
+    border-radius: 1em;
   }
 
   .answered {
-    background-color: #ccc;
+    background-color: $light-orange;
     position: relative;
     .badge {
       position: absolute;
@@ -19,8 +72,8 @@
       width: 4.5em;
       border-radius: 50%;
       text-align: center;
-      background: #999;
-      color: #fefefe;
+      background: $dark-purple;
+      color: $light-purple;
     }
   }
 }

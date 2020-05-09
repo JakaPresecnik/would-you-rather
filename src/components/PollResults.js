@@ -7,7 +7,7 @@ class PollResults extends Component {
 
     return (
       <div className='inline-div'>
-        <p>Result:</p>
+        <p className='bigger-text'>Result:</p>
         <div className={answer ==='optionOne' ? ('answered') : ('unanswered')}>
           <p>Would you rather {question.optionOne.text}?</p>
           <progress value={question.optionOne.votes.length} max={question.optionOne.votes.length + question.optionTwo.votes.length}> 32% </progress>

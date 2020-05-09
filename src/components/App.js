@@ -23,7 +23,7 @@ class App extends Component {
         <div className="App">
           {this.props.authedUser === null
           ? <Login path='/login' /> :
-          <div>
+          <div className='container'>
             <Nav />
             <Route path='/new' component={NewQuestion} />
             <Route path='/' exact component={Home} />

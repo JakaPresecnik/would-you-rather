@@ -56,6 +56,10 @@ nav {
         background-color: $purple;
         color: $light-purple;
       }
+      &.selected {
+        background-color: $light-orange;
+        color: $dark-orange;
+      }
     }
     li {
       display: inline;

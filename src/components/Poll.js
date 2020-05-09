@@ -25,7 +25,7 @@ class Poll extends Component {
   render() {
     const { question, authorName, authorAvatar } = this.props.location.state
     const { authedUser } = this.props
-    
+
     return(
       <section>
         <div className='question'>
@@ -35,13 +35,13 @@ class Poll extends Component {
 
           {!Object.keys(authedUser.answers).includes(question.id) ? (
               <div className='inline-div'>
-                <p>Would you rather...</p>
+                <p className='bigger-text'>Would you rather...</p>
                 <form onSubmit={e => this.handleSubmit(e)}>
                   <input onChange={(e) => this.handleSelect(e)} type="radio" name='option' id='optionOne' value='optionOne'/>
-                  <label htmlFor='optionOne'>{question.optionOne.text}</label>
-                  <br />
+                  <label htmlFor='optionOne'><span></span>{question.optionOne.text}</label>
+                  <p>or</p>
                   <input onChange={(e) => this.handleSelect(e)} type="radio" name='option' id='optionTwo' value='optionTwo'/>
-                  <label htmlFor='optionTwo'>{question.optionTwo.text}</label>
+                  <label htmlFor='optionTwo'><span></span>{question.optionTwo.text}</label>
                   <button disabled={!this.state.answer}>SUBMIT</button>
                 </form>
               </div>
