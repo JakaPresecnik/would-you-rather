@@ -57,6 +57,34 @@ $orange: #af6f0b;
     padding: 0.2em;
     border: 1px solid $orange;
     border-radius: 1em;
+    progress {
+      text-align:center;
+      position: relative;
+      top: -0.7em;
+
+    }
+    progress:before {
+      content: attr(data-label) '%';
+      position:relative;
+      color: $xdark-green;
+      top:1.25em;
+      font-weight: bold;
+
+    }
+    progress[value] {
+     -webkit-appearance: none;
+      appearance: none;
+      width: 250px;
+      height: 20px;
+    }
+
+    progress[value]::-webkit-progress-bar {
+      background: $xlight-green;
+    }
+    progress[value]::-webkit-progress-value {
+      background: $green;
+    }
+
   }
 
   .answered {

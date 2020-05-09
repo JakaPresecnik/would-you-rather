@@ -17,7 +17,7 @@ class Users extends Component {
           <p>Created Questions: <span>{createdQuestions}</span></p>
         </div>
         <div>
-          <p>Score:</p>
+          <p className='score-text'>Score:</p>
           <div className='score'><p>{numAnswered + createdQuestions}</p></div>
         </div>
 

@@ -103,6 +103,7 @@ section {
       padding: 0.1em;
       background-color: $xlight-green;
       border: 1px solid $green;
+      border-radius: 7px;
       box-shadow: 1px 1px 3px $dark-green;
       &:hover {
         background-color: $green;
@@ -121,15 +122,49 @@ section {
   }
 }
 
-
 .new-question {
-  margin-top: 1em;
-  .inline-div {
-    border: 1px solid #ccc;
-    padding-bottom: 1em;
-    button {
-      margin: 1em;
-      width: 50%;
+  background-color: $light-orange;
+  padding: 0.3em;
+  border: 2px solid $orange;
+  h3 {
+    font-family: $header-font;
+    color: $dark-orange;
+    border-bottom: 1px solid $orange;
+    padding-bottom: 0.5em;
+  }
+  p {
+    font-family: $normal-font;
+    font-size: 1.1em;
+    color: $dark-orange;
+  }
+  input {
+    width: 55%;
+    font-size: 1em;
+    padding: 0.3em;
+    border: 1px solid $light-green;
+    border-radius: 7px;
+    background: $xlight-green;
+    color: $xdark-green;
+  }
+  button {
+    width: 55%;
+    font-size: 0.85em;
+    font-family: $normal-font;
+    color: $xdark-green;
+    cursor: pointer;
+    padding: 0.1em;
+    margin-top: 1.5em;
+    background-color: $xlight-green;
+    border: 1px solid $green;
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px $dark-green;
+    &:hover {
+      background-color: $green;
+      color:$xlight-green;
+    }
+    &:active {
+      background-color: $dark-green;
+      box-shadow: none;
     }
   }
 }

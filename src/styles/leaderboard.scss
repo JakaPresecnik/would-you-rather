@@ -1,23 +1,47 @@
 .grid-div {
+  background: $light-orange;
+  margin: 1.5em;
+  padding: 1em;
+  border: 2px solid $orange;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   justify-content: space-around;
   img {
-    margin: auto;
+    margin: auto 1em auto 0.1em;
     width: 7em;
     border-radius: 50%;
   }
+  div {
+    border-left: 1px solid $orange;
+  }
+  h3 {
+    font-family: $header-font;
+    color: $dark-orange;
+    padding-top: 0.1em;
+    margin-top: 0;
+  }
+  p {
+    font-family: $normal-font;
+  }
+  .score-text {
+    margin-top: 0.1em;
+    font-weight: bold;
+    color: $dark-purple;
+
+  }
   .score  {
+    font-size: 1.5em;
     z-index: 1;
     display: inline-block;
-    height: 4em;
-    width: 4em;
+    height: 3em;
+    width: 3em;
     border-radius: 50%;
     text-align: center;
-    background: #999;
-    color: #fefefe;
+    background: $dark-purple;
+    color: $light-purple;
     p {
-      line-height: 2em;
+      line-height: 1em;
+      font-weight: bold;
     }
   }
 }

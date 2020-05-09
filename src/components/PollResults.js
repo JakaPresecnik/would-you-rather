@@ -10,16 +10,16 @@ class PollResults extends Component {
         <p className='bigger-text'>Result:</p>
         <div className={answer ==='optionOne' ? ('answered') : ('unanswered')}>
           <p>Would you rather {question.optionOne.text}?</p>
-          <progress value={question.optionOne.votes.length} max={question.optionOne.votes.length + question.optionTwo.votes.length}> 32% </progress>
-          <p>{question.optionOne.votes.length} of {question.optionOne.votes.length + question.optionTwo.votes.length}</p>
+          <progress value={question.optionOne.votes.length} max={question.optionOne.votes.length + question.optionTwo.votes.length} data-label={question.optionOne.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}> </progress>
+          <p>{question.optionOne.votes.length} out of {question.optionOne.votes.length + question.optionTwo.votes.length} votes</p>
           {answer ==='optionOne' && (
             <div className='badge'><p>YOUR VOTE</p></div>
           )}
         </div>
         <div className={answer ==='optionTwo' ? ('answered') : ('unanswered')}>
           <p>Would you rather {question.optionTwo.text}?</p>
-          <progress value={question.optionTwo.votes.length} max={question.optionOne.votes.length + question.optionTwo.votes.length}> 32% </progress>
-          <p>{question.optionTwo.votes.length} of {question.optionOne.votes.length + question.optionTwo.votes.length}</p>
+          <progress value={question.optionTwo.votes.length} max={question.optionOne.votes.length + question.optionTwo.votes.length} data-label={question.optionTwo.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100}> </progress>
+          <p>{question.optionTwo.votes.length} out of {question.optionOne.votes.length + question.optionTwo.votes.length} votes</p>
           {answer ==='optionTwo' && (
             <div className='badge'><p>YOUR VOTE</p></div>
           )}
