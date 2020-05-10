@@ -15,7 +15,7 @@ class Nav extends Component {
       <nav>
         <ul>
           <NavLink to='/' exact activeClassName="selected"><li>Home</li></NavLink>
-          <NavLink to='/new' activeClassName="selected"><li>New Question</li></NavLink>
+          <NavLink to='/add' activeClassName="selected"><li>New Question</li></NavLink>
           <NavLink to='/leaderboard' activeClassName="selected"><li>Leaderboard</li></NavLink>
         </ul>
         <div className='dropdown' onClick={this.handleLogOut}>

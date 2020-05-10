@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class Users extends Component {
-  render(){
+function Users (props) {
 
-    const { user, numAnswered } = this.props
-    const createdQuestions = user.questions.length
+    const { user, numAnswered, createdQuestions } = props
 
     return (
       <div className='grid-div'>
@@ -19,10 +17,8 @@ class Users extends Component {
           <p className='score-text'>Score:</p>
           <div className='score'><p>{numAnswered + createdQuestions}</p></div>
         </div>
-
       </div>
     )
-  }
 }
 
 const mapStateToProps = ({ users }, { id }) => {
@@ -31,6 +27,7 @@ const mapStateToProps = ({ users }, { id }) => {
   return {
     user,
     numAnswered: Object.keys(user.answers).length,
+    createdQuestions: user.questions.length,
   }
 }
 

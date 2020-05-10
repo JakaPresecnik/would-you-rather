@@ -29,9 +29,9 @@ class App extends Component {
           <div className='container'>
             <Nav />
             <Switch>
-              <Route path='/new' component={NewQuestion} />
+              <Route path='/add' component={NewQuestion} />
               <Route path='/' exact component={Home} />
-              <Route path='/poll/:id' component={Poll} />
+              <Route path='/questions/:question_id' component={Poll} />
               <Route path='/leaderboard' component={Leaderboard} />
               <Route component={NoMatch} />
             </Switch>

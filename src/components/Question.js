@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-class Question extends Component {
-  render() {
-    const { authorName, authorAvatar, question } = this.props
+function Question (props) {
+    const { authorName, authorAvatar, question } = props
 
     return(
       <div className='question'>
@@ -15,7 +14,7 @@ class Question extends Component {
           <p>...{question.optionOne.text.slice(0, question.optionOne.text.length - 20)}...</p>
           <Link
             to={{
-              pathname:`/poll/${question.id}`,
+              pathname:`/questions/question_${question.id}`,
               state: { question, authorName, authorAvatar }
             }}
           >
@@ -24,7 +23,6 @@ class Question extends Component {
         </div>
       </div>
     )
-  }
 }
 
 const mapStateToProps = ({ questions, users }, { id }) => {
