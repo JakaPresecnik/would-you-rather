@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setUserId } from '../actions/authedUser'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 class Login extends Component {
   state = {
@@ -28,15 +28,16 @@ class Login extends Component {
         <p>Please sign in to continue</p>
         <img className='App-logo' src='https://equimper.gallerycdn.vsassets.io/extensions/equimper/react-native-react-redux/2.0.3/1551449028703/Microsoft.VisualStudio.Services.Icons.Default' alt='react and redux logo combined' />
         <form onSubmit={e => this.handleLogIn(e, this.state.authedUser)}>
-          <select defaultValue='Select User' id='select-user' list="users" onChange={e => this.setState({authedUser: e.target.value})}>
+          <select placeholder='Select User' id='select-user' list="users" onChange={e => this.setState({authedUser: e.target.value})}>
             <option hidden>Select user</option>
             {usersArray.map((user) => (
               <option key={user.id} value={user.id}>{user.name}</option>
             ))}
 
           </select>
-          <button disabled={this.state.authedUser === ''}>SUBMIT</button>
+          <button disabled={this.state.authedUser === ''}>LOG IN</button>
         </form>
+        <Link to='/signup'><button>SIGN UP</button></Link>
       </section>
     )
   }

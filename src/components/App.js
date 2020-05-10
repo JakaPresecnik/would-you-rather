@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import LoadingBar from 'react-redux-loading-bar'
 
 import { handleGetQuestions, handleGetUsers } from '../actions'
@@ -11,6 +11,7 @@ import NewQuestion from './NewQuestion'
 import Poll from './Poll'
 import Login from './Login'
 import NoMatch from './NoMatch'
+import Signup from './Signup'
 import '../styles/App.scss';
 
 class App extends Component {
@@ -25,7 +26,8 @@ class App extends Component {
         <div className="App">
           <LoadingBar />
           {this.props.authedUser === null
-          ? <Login path='/login' /> :
+          ? <Redirect to='/login' />
+          :
           <div className='container'>
             <Nav />
             <Switch>
@@ -37,6 +39,8 @@ class App extends Component {
             </Switch>
           </div>
         }
+        <Route path='/login' component={Login}/>
+        <Route path='/signup' component={Signup}/>
         </div>
       </BrowserRouter>
     )

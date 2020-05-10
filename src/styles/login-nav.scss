@@ -125,7 +125,7 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  p {
+  p, label {
     color: $dark-purple;
     font-family: $nav-font;
     font-size: 1.2em;
@@ -142,6 +142,7 @@ nav {
   }
 
   select {
+    color: $purple;
     height: 2em;
     font-size: 1em;
     font-family: $nav-font;
@@ -154,7 +155,30 @@ nav {
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
+
+    option {
+      color: $purple;
+    }
   }
+
+  input {
+    height: 2em;
+    font-size: 1em;
+    font-family: $nav-font;
+    margin: 1em auto;
+    border: 1px solid $light-purple;
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+    &::placeholder {
+      color: $purple;
+    }
+    &:focus {
+      border: 1px solid $dark-purple;
+      box-shadow: 2px 2px 5px $purple, -2px -2px 5px $purple;
+    }
+  }
+
 
   button {
     background-color: $light-purple;
