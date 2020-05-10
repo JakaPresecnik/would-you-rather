@@ -7,7 +7,6 @@ class Users extends Component {
     const { user, numAnswered } = this.props
     const createdQuestions = user.questions.length
 
-    console.log(user)
     return (
       <div className='grid-div'>
         <img className='avatar' src={user.avatarURL} alt={`Avatar of ${user.name}`}/>

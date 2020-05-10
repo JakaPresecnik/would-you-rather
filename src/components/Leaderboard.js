@@ -5,6 +5,7 @@ import Users from './Users'
 class Leaderboard extends Component {
   render() {
     const { usersIds } = this.props
+    console.log( usersIds )
     return (
       <section>
         {usersIds.map((id) => (
@@ -17,7 +18,9 @@ class Leaderboard extends Component {
 
 const mapStateToProps = ({ users }) => {
   return {
-    usersIds: Object.keys(users),
+    usersIds: Object.keys(users).sort((a, b) => {
+      return Object.keys((users[b].answers).length + users[b].questions.length) - (Object.keys(users[a].answers).length + users[a].questions.length)
+    }),
   }
 }
 
