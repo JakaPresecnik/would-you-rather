@@ -147,6 +147,30 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
   }
 }
 
+function formatUser ({firstName, lastName, username, avatarURL}) {
+  return {
+    id: username,
+    name: firstName + ' ' + lastName,
+    avatarURL: avatarURL,
+    answers: {},
+    questions: [],
+  }
+}
+
+export function _saveUser (user) {
+  return new Promise ((res,rej) => {
+    const formattedUser = formatUser(user);
+
+    setTimeout(() => {
+      users = {
+        ...users,
+          [user.id]: user,
+      }
+      res(formattedUser)
+    }, 700)
+  })
+}
+
 export function _saveQuestion (question) {
   return new Promise((res, rej) => {
     const authedUser = question.author;

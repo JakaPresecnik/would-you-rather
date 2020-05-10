@@ -1,4 +1,4 @@
-import { GET_USERS, SAVE_USER_ANSWER, SAVE_USER_QUESTION } from '../actions/users'
+import { GET_USERS, SAVE_USER_ANSWER, SAVE_USER_QUESTION, ADD_USER } from '../actions/users'
 
 export default function users(state = {}, action) {
   switch(action.type) {
@@ -7,25 +7,30 @@ export default function users(state = {}, action) {
         ...state,
         ...action.users,
       }
-      case SAVE_USER_ANSWER:
+    case SAVE_USER_ANSWER:
+      return {
+        ...state,
+        [action.authedUser]: {
+          ...state[action.authedUser],
+            answers: {
+              ...state[action.authedUser].answers,
+                [action.qid]: action.answer,
+            }
+        }
+      }
+      case SAVE_USER_QUESTION:
         return {
           ...state,
-          [action.authedUser]: {
-            ...state[action.authedUser],
-              answers: {
-                ...state[action.authedUser].answers,
-                  [action.qid]: action.answer,
-              }
+          [action.user]: {
+            ...state[action.user],
+              questions: state[action.user].questions.concat(action.qid)
           }
         }
-        case SAVE_USER_QUESTION:
-          return {
-            ...state,
-            [action.user]: {
-              ...state[action.user],
-                questions: state[action.user].questions.concat(action.qid)
-            }
-          }
+      case ADD_USER:
+        return {
+          ...state,
+          [action.user.id]: action.user
+        }
       default:
         return state
   }

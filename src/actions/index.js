@@ -1,9 +1,9 @@
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
-import { _getQuestions, _getUsers, _saveQuestion, _saveQuestionAnswer } from '../data/_DATA'
+import { _getQuestions, _getUsers, _saveQuestion, _saveQuestionAnswer, _saveUser } from '../data/_DATA'
 import { getQuestions, saveQuestionAnswer, saveQuestion } from './questions'
-import { getUsers, saveUserAnswer, saveUserQuestion } from './users'
-import { saveAnswer } from './authedUser'
+import { getUsers, saveUserAnswer, saveUserQuestion, addUser } from './users'
+import { saveAnswer, setUserId } from './authedUser'
 
 export function handleGetQuestions (questions) {
   return (dispatch) => {
@@ -48,6 +48,15 @@ export function handleSaveQuestion({optionOneText, optionTwoText}) {
       dispatch(saveQuestion(res))
       dispatch(saveUserQuestion(res.id, res.author))
     })
+  }
+}
 
+export function handleAddUser(user) {
+  return (dispatch) => {
+    return _saveUser(user)
+    .then((user) => {
+      dispatch(addUser(user))
+      dispatch(setUserId(user))
+    })
   }
 }
