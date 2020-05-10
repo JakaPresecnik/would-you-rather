@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import LoadingBar from 'react-redux-loading-bar'
 
 import { handleGetQuestions, handleGetUsers } from '../actions'
 import Nav from './Nav'
@@ -9,6 +10,7 @@ import Leaderboard from './Leaderboard'
 import NewQuestion from './NewQuestion'
 import Poll from './Poll'
 import Login from './Login'
+import NoMatch from './NoMatch'
 import '../styles/App.scss';
 
 class App extends Component {
@@ -21,14 +23,18 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <LoadingBar />
           {this.props.authedUser === null
           ? <Login path='/login' /> :
           <div className='container'>
             <Nav />
-            <Route path='/new' component={NewQuestion} />
-            <Route path='/' exact component={Home} />
-            <Route path='/poll/:id' component={Poll} />
-            <Route path='/leaderboard' component={Leaderboard} />
+            <Switch>
+              <Route path='/new' component={NewQuestion} />
+              <Route path='/' exact component={Home} />
+              <Route path='/poll/:id' component={Poll} />
+              <Route path='/leaderboard' component={Leaderboard} />
+              <Route component={NoMatch} />
+            </Switch>
           </div>
         }
         </div>

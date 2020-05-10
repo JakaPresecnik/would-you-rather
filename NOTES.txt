@@ -1,4 +1,0 @@
-WHEN DONE!
-
-1. inside reducers/authedUser remove data in the store
-2. Add colors and font variables and implement them in scss files

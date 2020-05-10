@@ -192,3 +192,23 @@ nav {
     display: none;
   }
 }
+.no-match {
+  max-width: 25em;
+  border: 1em solid $purple;
+  background: $light-purple;
+  padding: 1em;
+  h1 {
+    color: $dark-purple;
+    line-height: 1em;
+    font-size: 5em;
+  }
+  p {
+    font-size: 1.1em;
+  }
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    line-height: 2em;
+  }
+}

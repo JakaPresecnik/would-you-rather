@@ -5,7 +5,6 @@ import Users from './Users'
 class Leaderboard extends Component {
   render() {
     const { usersIds } = this.props
-    console.log( usersIds )
     return (
       <section>
         {usersIds.map((id) => (
