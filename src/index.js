@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import { PersistGate } from 'redux-persist/integration/react'
 
 import './index.css';
 import reducer from './reducers'
@@ -9,11 +12,22 @@ import middleware from './middleware'
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducer, middleware)
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+//redux-persist added in order to prevent browser reloading the page when entering in the search bar
+const persistedReducer = persistReducer(persistConfig, reducer)
+
+let store = createStore(persistedReducer, middleware)
+let persistor = persistStore(store)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );

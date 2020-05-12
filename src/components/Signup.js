@@ -3,7 +3,6 @@ import { Redirect, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { handleAddUser } from '../actions'
-import { setUserId } from '../actions/authedUser'
 
 class Signup extends Component {
   state = {
