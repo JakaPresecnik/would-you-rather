@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/JakaPresecnik/would-you-rather/static/css/main.07244324.chunk.css",
+    "main.css": "/JakaPresecnik/would-you-rather/static/css/main.5047eb16.chunk.css",
     "main.js": "/JakaPresecnik/would-you-rather/static/js/main.dd0df160.chunk.js",
     "main.js.map": "/JakaPresecnik/would-you-rather/static/js/main.dd0df160.chunk.js.map",
     "runtime-main.js": "/JakaPresecnik/would-you-rather/static/js/runtime-main.9e26e0f8.js",
@@ -8,15 +8,15 @@
     "static/js/2.4c451430.chunk.js": "/JakaPresecnik/would-you-rather/static/js/2.4c451430.chunk.js",
     "static/js/2.4c451430.chunk.js.map": "/JakaPresecnik/would-you-rather/static/js/2.4c451430.chunk.js.map",
     "index.html": "/JakaPresecnik/would-you-rather/index.html",
-    "precache-manifest.7157d5023c0395b9cb1561361f08c09a.js": "/JakaPresecnik/would-you-rather/precache-manifest.7157d5023c0395b9cb1561361f08c09a.js",
+    "precache-manifest.848e3623a85f6433da720352824b5fbe.js": "/JakaPresecnik/would-you-rather/precache-manifest.848e3623a85f6433da720352824b5fbe.js",
     "service-worker.js": "/JakaPresecnik/would-you-rather/service-worker.js",
-    "static/css/main.07244324.chunk.css.map": "/JakaPresecnik/would-you-rather/static/css/main.07244324.chunk.css.map",
+    "static/css/main.5047eb16.chunk.css.map": "/JakaPresecnik/would-you-rather/static/css/main.5047eb16.chunk.css.map",
     "static/js/2.4c451430.chunk.js.LICENSE.txt": "/JakaPresecnik/would-you-rather/static/js/2.4c451430.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9e26e0f8.js",
     "static/js/2.4c451430.chunk.js",
-    "static/css/main.07244324.chunk.css",
+    "static/css/main.5047eb16.chunk.css",
     "static/js/main.dd0df160.chunk.js"
   ]
 }
