@@ -6,7 +6,7 @@ export default function NoMatch () {
     <div className='no-match'>
       <h1>404</h1>
       <p>Page Not found.</p>
-      <Link to='/'>HOME</Link>
+      <Link to='/would-you-rather/'>HOME</Link>
     </div>
   )
 }

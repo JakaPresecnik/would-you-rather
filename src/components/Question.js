@@ -14,7 +14,7 @@ function Question (props) {
           <p>...{question.optionOne.text.slice(0, question.optionOne.text.length - 20)}...</p>
           <Link
             to={{
-              pathname:`/questions/question_${question.id}`,
+              pathname:`/would-you-rather/questions/question_${question.id}`,
               state: { question, authorName, authorAvatar }
             }}
           >

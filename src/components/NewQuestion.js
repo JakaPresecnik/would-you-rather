@@ -30,7 +30,7 @@ class NewQuestion extends Component {
     const { textOne, textTwo, toHome } = this.state
 
     if(toHome) {
-      return <Redirect to='/' />
+      return <Redirect to='/would-you-rather/' />
     }
 
     return (

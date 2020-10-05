@@ -26,21 +26,21 @@ class App extends Component {
         <div className="App">
           <LoadingBar />
           {this.props.authedUser === null
-          ? <Redirect to='/login' />
+          ? <Redirect to='/would-you-rather/login' />
           :
           <div className='container'>
             <Nav />
             <Switch>
-              <Route path='/add' component={NewQuestion} />
-              <Route path='/' exact component={Home} />
-              <Route path='/questions/:question_id' component={Poll} />
-              <Route path='/leaderboard' component={Leaderboard} />
+              <Route path='/would-you-rather/add' component={NewQuestion} />
+              <Route path='/would-you-rather/' exact component={Home} />
+              <Route path='/would-you-rather/questions/:question_id' component={Poll} />
+              <Route path='/would-you-rather/leaderboard' component={Leaderboard} />
               <Route component={NoMatch} />
             </Switch>
           </div>
         }
-        <Route path='/login' component={Login}/>
-        <Route path='/signup' component={Signup}/>
+        <Route path='/would-you-rather/login' component={Login}/>
+        <Route path='/would-you-rather/signup' component={Signup}/>
         </div>
       </BrowserRouter>
     )

@@ -19,7 +19,7 @@ class Login extends Component {
     const { usersArray } = this.props
 
     if(this.state.toHome === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/would-you-rather/' />
     }
 
     return (
@@ -37,7 +37,7 @@ class Login extends Component {
           </select>
           <button disabled={this.state.authedUser === ''}>LOG IN</button>
         </form>
-        <Link to='/signup'><button>SIGN UP</button></Link>
+        <Link to='/would-you-rather/signup'><button>SIGN UP</button></Link>
       </section>
     )
   }

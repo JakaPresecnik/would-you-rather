@@ -29,14 +29,14 @@ class Signup extends Component {
     const { firstName, lastName, username, avatarURL } = this.state
 
     if(this.state.toHome === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/would-you-rather/' />
     }
 
 
     return (
       <section className='login'>
         <h2>Welcome to Would you rather app!</h2>
-        <Link to='/login'><button>BACK</button></Link>
+        <Link to='/would-you-rather/login'><button>BACK</button></Link>
         <form onSubmit= {e => this.handleSubmit(e)}>
           <label htmlFor='first-name'>First Name:</label>
           <input id='first-name' type='text' placeholder='First Name' onChange={e => this.handleChange(e, 'firstName')}/ >

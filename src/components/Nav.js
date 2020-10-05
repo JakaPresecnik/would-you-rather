@@ -14,9 +14,9 @@ class Nav extends Component {
     return(
       <nav>
         <ul>
-          <NavLink to='/' exact activeClassName="selected"><li>Home</li></NavLink>
-          <NavLink to='/add' activeClassName="selected"><li>New Question</li></NavLink>
-          <NavLink to='/leaderboard' activeClassName="selected"><li>Leaderboard</li></NavLink>
+          <NavLink to='/would-you-rather/' exact activeClassName="selected"><li>Home</li></NavLink>
+          <NavLink to='/would-you-rather/add' activeClassName="selected"><li>New Question</li></NavLink>
+          <NavLink to='/would-you-rather/leaderboard' activeClassName="selected"><li>Leaderboard</li></NavLink>
         </ul>
         <div className='dropdown' onClick={this.handleLogOut}>
           <img className='dropdown-pic' src={authedUserAvatar} alt= {`Avatar of ${authedUserName}`} / >
